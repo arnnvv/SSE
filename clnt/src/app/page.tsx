@@ -6,7 +6,7 @@ export default function Home(): JSX.Element {
   const [messages, setMessages] = useState<string[]>([]);
 
   useEffect(() => {
-    const eventSource = new EventSource("http://localhost:3001/");
+    const eventSource = new EventSource("http://localhost:3001");
 
     eventSource.onmessage = (event: MessageEvent) => {
       setMessages((prev) => [...prev, event.data]);
